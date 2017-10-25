@@ -5,3 +5,10 @@ c:\users\ada\source\repos\FifteenPuzzle\FifteenPuzzle\obj\Debug\FifteenPuzzle.cs
 c:\users\ada\source\repos\FifteenPuzzle\FifteenPuzzle\obj\Debug\FifteenPuzzle.csproj.CoreCompileInputs.cache
 c:\users\ada\source\repos\FifteenPuzzle\FifteenPuzzle\obj\Debug\FifteenPuzzle.exe
 c:\users\ada\source\repos\FifteenPuzzle\FifteenPuzzle\obj\Debug\FifteenPuzzle.pdb
+C:\Users\Ada\Desktop\SISE\FifteenPuzzle\FifteenPuzzle\bin\Debug\FifteenPuzzle.exe.config
+C:\Users\Ada\Desktop\SISE\FifteenPuzzle\FifteenPuzzle\bin\Debug\FifteenPuzzle.exe
+C:\Users\Ada\Desktop\SISE\FifteenPuzzle\FifteenPuzzle\bin\Debug\FifteenPuzzle.pdb
+C:\Users\Ada\Desktop\SISE\FifteenPuzzle\FifteenPuzzle\obj\Debug\FifteenPuzzle.csprojResolveAssemblyReference.cache
+C:\Users\Ada\Desktop\SISE\FifteenPuzzle\FifteenPuzzle\obj\Debug\FifteenPuzzle.csproj.CoreCompileInputs.cache
+C:\Users\Ada\Desktop\SISE\FifteenPuzzle\FifteenPuzzle\obj\Debug\FifteenPuzzle.exe
+C:\Users\Ada\Desktop\SISE\FifteenPuzzle\FifteenPuzzle\obj\Debug\FifteenPuzzle.pdb
