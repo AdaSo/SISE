@@ -9,8 +9,7 @@ namespace FifteenPuzzle
 {
     class Program
     {
-        public static int[,] board;
-        public static void ReadFromFile(string path)
+        public static void ReadFromFile(string path, Frame frame )
         {
             string[] input = File.ReadAllLines(path);
             int a = 0, b = 0;
@@ -23,31 +22,32 @@ namespace FifteenPuzzle
                     a = Int32.Parse(numbers[0]);
                     b = Int32.Parse(numbers[1]);
 
-                    board = new int[a, b];
+                    frame.Board = new int[a, b];
                 }
                 else
                 {
                     for (int i = 0; i < numbers.GetLength(0); i++)
                     {
-                        board[counter - 1, i] = Int32.Parse(numbers[i]);
+                        frame.Board[counter - 1, i] = Int32.Parse(numbers[i]);
                     }
                 }
                 counter++;
             }
 
-            for (int i = 0; i < board.GetLength(0); i++)
+            for (int i = 0; i < frame.Board.GetLength(0); i++)
             {
-                for (int j = 0; j < board.GetLength(1); j++)
+                for (int j = 0; j < frame.Board.GetLength(1); j++)
                 {
-                    Console.Write(board[i, j] + ", ");
+                    Console.Write(frame.Board[i, j] + ", ");
                 }
                 Console.WriteLine();
             }
         }
         static void Main(string[] args)
         {
+            Frame frame = new Frame();
 
-            ReadFromFile("poczatkowy.txt");
+            ReadFromFile("poczatkowy.txt", frame);
             //string x = sr.ReadLine();
             //Console.WriteLine(x);
 

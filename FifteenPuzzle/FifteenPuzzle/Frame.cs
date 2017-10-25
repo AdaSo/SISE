@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace FifteenPuzzle
 {
-    public static class Frame
+    public class Frame
     {
-        public static int[,] Board { get; set; }
+        public int[,] Board { get; set; }
 
-        public static void Initialize()
+        public void Initialize()
         {
             Random rand = new Random(Guid.NewGuid().GetHashCode());
 
@@ -51,7 +51,7 @@ namespace FifteenPuzzle
             }
         }
 
-        private static int two2oneDim(int x, int y)
+        private int two2oneDim(int x, int y)
         {
             return 4 * x + y;
         }
