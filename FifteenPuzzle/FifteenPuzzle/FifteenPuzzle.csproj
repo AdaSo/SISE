@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cell.cs" />
     <Compile Include="Coordinates.cs" />
     <Compile Include="Frame.cs" />
     <Compile Include="Program.cs" />
