@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace FifteenPuzzle
 {
-    public class Cell
+    public class CreateTree
     {
-        int Value;
-        Coordinates myCoorinates;
-        int distance;
+
     }
 }

@@ -6,54 +6,117 @@ using System.Threading.Tasks;
 
 namespace FifteenPuzzle
 {
-    public class Frame
+    public class Frame : ICloneable
     {
-        public int[,] Board { get; set; }
+        public Puzzle[,] Board { get; set; }
 
-        public void Initialize()
+        public Frame(int x, int y)
         {
-            Random rand = new Random(Guid.NewGuid().GetHashCode());
+            Board = new Puzzle[x, y];
+        }
 
-            Board = new int[4,4];
-            Board[0, 0] = -1;
-            for (int i = 0; i < Board.GetLength(0); i++)
+        private int Two2oneDim(int x, int y)
+        {
+            return 4 * x + y;
+        }
+
+        override public String ToString()
+        {
+            String s = "";
+            for (int i = 0; i < this.Board.GetLength(0); i++)
             {
-                for (int j = 0; j < Board.GetLength(1); j++)
+                for (int j = 0; j < this.Board.GetLength(1); j++)
                 {
-                    Board[i, j] = -1;
+                    s += (this.Board[i, j].ToString() + ", ");
                 }
+                s += '\n';
             }
+            return s;
+        }
 
-            int value = 0;
-            int x_index;
-            int y_index;
-            while (value != 16)
+        public object Clone()
+        {
+            Frame f = new Frame(Board.GetLength(0), Board.GetLength(1))
             {
-                 x_index = rand.Next(0, 4);
-                 y_index = rand.Next(0, 4);
+                Board = this.Board
+            };
+            return f;
+        }
 
-                if (Board[x_index, y_index] == -1)
-                {
-                    //Board.SetValue(value, x_index, y_index);
-                    Board[x_index, y_index] = value;
-                    value++;
-                }
+        public void MoveUp()
+        {
+            Coordinates c = FindEmpty();
+            if (c.x > 0)
+            {
+                Puzzle p = Board[c.x, c.y];
+                Board[c.x, c.y] = Board[c.x - 1, c.y];
+                Board[c.x - 1, c.y] = p;
             }
-
-            Console.WriteLine("Po inicjalizacji: ");
-            for (int i = 0; i < Board.GetLength(0); i++)
+            else
             {
-                for (int j = 0; j < Board.GetLength(1); j++)
-                {
-                    Console.Write(Board[i, j] + ", ");
-                }
-                Console.WriteLine();
+                Console.WriteLine("nie mozna");
             }
         }
 
-        private int two2oneDim(int x, int y)
+        public void MoveDown()
         {
-            return 4 * x + y;
+            Coordinates c = FindEmpty();
+            if (c.x < this.Board.GetLength(1) - 1)
+            {
+                Puzzle p = Board[c.x, c.y];
+                Board[c.x, c.y] = Board[c.x + 1, c.y];
+                Board[c.x + 1, c.y] = p;
+            }
+            else
+            {
+                Console.WriteLine("nie mozna");
+            }
+        }
+
+        public void MoveRight()
+        {
+            Coordinates c = FindEmpty();
+            if (c.y < this.Board.GetLength(0) - 1)
+            {
+                Puzzle p = Board[c.x, c.y];
+                Board[c.x, c.y] = Board[c.x, c.y + 1];
+                Board[c.x, c.y + 1] = p;
+            }
+            else
+            {
+                Console.WriteLine("nie mozna");
+            }
+        }
+
+        public void MoveLeft()
+        {
+            Coordinates c = FindEmpty();
+            if (c.y > 0)
+            {
+                Puzzle p = Board[c.x, c.y];
+                Board[c.x, c.y] = Board[c.x, c.y - 1];
+                Board[c.x, c.y - 1] = p;
+            }
+            else
+            {
+                Console.WriteLine("nie mozna");
+            }
+        }
+
+        private Coordinates FindEmpty()
+        {
+            Coordinates c = null;
+            for (int i = 0; i < this.Board.GetLength(0); i++)
+            {
+                for (int j = 0; j < this.Board.GetLength(1); j++)
+                {
+                    if (this.Board[i, j].Value == 0)
+                    {
+                        c = new Coordinates(i, j);
+                    }
+                }
+            }
+            return c;
         }
     }
 }
