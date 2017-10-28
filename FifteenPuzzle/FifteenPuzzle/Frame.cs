@@ -43,7 +43,7 @@ namespace FifteenPuzzle
             return f;
         }
 
-        public void MoveUp()
+        public bool MoveUp()
         {
             Coordinates c = FindEmpty();
             if (c.x > 0)
@@ -51,14 +51,16 @@ namespace FifteenPuzzle
                 Puzzle p = Board[c.x, c.y];
                 Board[c.x, c.y] = Board[c.x - 1, c.y];
                 Board[c.x - 1, c.y] = p;
+                return true;
             }
             else
             {
                 Console.WriteLine("nie mozna");
+                return false;
             }
         }
 
-        public void MoveDown()
+        public bool MoveDown()
         {
             Coordinates c = FindEmpty();
             if (c.x < this.Board.GetLength(1) - 1)
@@ -66,14 +68,18 @@ namespace FifteenPuzzle
                 Puzzle p = Board[c.x, c.y];
                 Board[c.x, c.y] = Board[c.x + 1, c.y];
                 Board[c.x + 1, c.y] = p;
+                return true;
+
             }
             else
             {
                 Console.WriteLine("nie mozna");
+                return false;
+
             }
         }
 
-        public void MoveRight()
+        public bool MoveRight()
         {
             Coordinates c = FindEmpty();
             if (c.y < this.Board.GetLength(0) - 1)
@@ -81,14 +87,18 @@ namespace FifteenPuzzle
                 Puzzle p = Board[c.x, c.y];
                 Board[c.x, c.y] = Board[c.x, c.y + 1];
                 Board[c.x, c.y + 1] = p;
+                return true;
+
             }
             else
             {
                 Console.WriteLine("nie mozna");
+                return false;
+
             }
         }
 
-        public void MoveLeft()
+        public bool MoveLeft()
         {
             Coordinates c = FindEmpty();
             if (c.y > 0)
@@ -96,10 +106,14 @@ namespace FifteenPuzzle
                 Puzzle p = Board[c.x, c.y];
                 Board[c.x, c.y] = Board[c.x, c.y - 1];
                 Board[c.x, c.y - 1] = p;
+                return true;
+
             }
             else
             {
                 Console.WriteLine("nie mozna");
+                return false;
+
             }
         }
 

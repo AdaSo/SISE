@@ -49,7 +49,7 @@ namespace FifteenPuzzle
         {
             Frame frame = ReadFromFile("poczatkowy.txt");
             Console.WriteLine(  frame.ToString());
-
+/*
             Console.WriteLine("w lewo:");
             frame.MoveLeft();
             Console.WriteLine(frame.ToString());
@@ -89,7 +89,10 @@ namespace FifteenPuzzle
 
             Console.WriteLine("w dol:");
             frame.MoveDown();
-            Console.WriteLine(frame.ToString());
+            Console.WriteLine(frame.ToString());*/
+
+            Solve.Initiate(frame);
+            Solve.Solving(frame, 0);
             //string x = sr.ReadLine();
             //Console.WriteLine(x);
 
