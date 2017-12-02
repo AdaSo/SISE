@@ -1,0 +1,8 @@
+
+.icon-user:before { content: '\e800'; } /* '' */
+.icon-edit:before { content: '\e801'; } /* '' */
+.icon-clipboard:before { content: '\e802'; } /* '' */
+.icon-ok:before { content: '\e803'; } /* '' */
+.icon-calendar-empty:before { content: '\f133'; } /* '' */
+.icon-male:before { content: '\f183'; } /* '' */
+.icon-cart-plus:before { content: '\f217'; } /* '' */
